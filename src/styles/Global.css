@@ -18,6 +18,7 @@ html {
 
 ::-webkit-scrollbar {
   width: 0.3vw;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -30,15 +31,14 @@ html {
 }
 
 body {
-  min-width: 100vw;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 #root {
-  min-width: 100vw;
   min-height: 100vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
