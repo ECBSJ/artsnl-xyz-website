@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react"
 import icon from "../assets/icon.svg"
 import TL from "../assets/TL.svg"
 import TC from "../assets/TC.svg"
@@ -9,6 +10,53 @@ import BC from "../assets/BC.svg"
 import BR from "../assets/BR.svg"
 
 function Block2() {
+  let BLref = useRef<HTMLImageElement>(null!)
+  let BCref = useRef<HTMLImageElement>(null!)
+  let BRref = useRef<HTMLImageElement>(null!)
+  let MLref = useRef<HTMLImageElement>(null!)
+  let MRref = useRef<HTMLImageElement>(null!)
+  let TLref = useRef<HTMLImageElement>(null!)
+  let TCref = useRef<HTMLImageElement>(null!)
+  let TRref = useRef<HTMLImageElement>(null!)
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      console.log(entries[0])
+      if (entries[0].isIntersecting) {
+        BLref.current.classList.add("opacity-100")
+        BLref.current.classList.add("translate-y-0")
+
+        BCref.current.classList.add("opacity-100")
+        BCref.current.classList.add("translate-y-0")
+
+        BRref.current.classList.add("opacity-100")
+        BRref.current.classList.add("translate-y-0")
+
+        MLref.current.classList.add("opacity-100")
+        MLref.current.classList.add("translate-y-0")
+
+        MRref.current.classList.add("opacity-100")
+        MRref.current.classList.add("translate-y-0")
+
+        TLref.current.classList.add("opacity-100")
+        TLref.current.classList.add("translate-y-0")
+
+        TCref.current.classList.add("opacity-100")
+        TCref.current.classList.add("translate-y-0")
+
+        TRref.current.classList.add("opacity-100")
+        TRref.current.classList.add("translate-y-0")
+
+        observer.unobserve(entries[0].target)
+      }
+    },
+    { threshold: 0.5 }
+  )
+
+  useEffect(() => {
+    observer.observe(document.getElementById("bottomRow")!)
+  }, [])
+
   return (
     <>
       <div className="lg:container lg:justify-end lg:gap-y-0 container w-80 h-screen flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
@@ -25,18 +73,18 @@ function Block2() {
         <div className="lg:w-[485px] lg:h-[482px] lg:scale-90 lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-y-8" id="icon-container">
           <img className="lg:hidden scale-110 translate-y-8" src={icon} alt="icon-logo" />
           <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8">
-            <img src={TL} alt="tl" />
-            <img src={TC} alt="tc" />
-            <img src={TR} alt="tr" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[500ms]" ref={TLref} src={TL} alt="tl" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[600ms]" ref={TCref} src={TC} alt="tc" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[700ms]" ref={TRref} src={TR} alt="tr" />
           </div>
           <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-5">
-            <img src={ML} alt="ml" />
-            <img src={MR} alt="mr" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[300ms]" ref={MLref} src={ML} alt="ml" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[400ms]" ref={MRref} src={MR} alt="mr" />
           </div>
-          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8">
-            <img src={BL} alt="bl" />
-            <img src={BC} alt="bc" />
-            <img src={BR} alt="br" />
+          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8" id="bottomRow">
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in" ref={BLref} src={BL} alt="bl" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[100ms]" ref={BCref} src={BC} alt="bc" />
+            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[200ms]" ref={BRref} src={BR} alt="br" />
           </div>
         </div>
       </div>
