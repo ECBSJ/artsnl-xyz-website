@@ -20,32 +20,13 @@ function Block2() {
   let TRref = useRef<HTMLImageElement>(null!)
 
   const observer = new IntersectionObserver(
-    (entries) => {
-      console.log(entries[0])
+    entries => {
       if (entries[0].isIntersecting) {
-        BLref.current.classList.add("opacity-100")
-        BLref.current.classList.add("translate-y-0")
-
-        BCref.current.classList.add("opacity-100")
-        BCref.current.classList.add("translate-y-0")
-
-        BRref.current.classList.add("opacity-100")
-        BRref.current.classList.add("translate-y-0")
-
-        MLref.current.classList.add("opacity-100")
-        MLref.current.classList.add("translate-y-0")
-
-        MRref.current.classList.add("opacity-100")
-        MRref.current.classList.add("translate-y-0")
-
-        TLref.current.classList.add("opacity-100")
-        TLref.current.classList.add("translate-y-0")
-
-        TCref.current.classList.add("opacity-100")
-        TCref.current.classList.add("translate-y-0")
-
-        TRref.current.classList.add("opacity-100")
-        TRref.current.classList.add("translate-y-0")
+        document.querySelectorAll("#brick").forEach(brick => {
+          brick.classList.add("opacity-100")
+          brick.classList.add("translate-y-0")
+          brick.classList.remove("translate-y-[-600px]")
+        })
 
         observer.unobserve(entries[0].target)
       }
@@ -54,18 +35,18 @@ function Block2() {
   )
 
   useEffect(() => {
-    observer.observe(document.getElementById("bottomRow")!)
+    observer.observe(document.getElementById("middleRow")!)
   }, [])
 
   return (
     <>
-      <div className="lg:container lg:justify-end lg:gap-y-0 container w-80 h-screen flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
+      <div className="lg:container lg:justify-center lg:gap-y-0 container w-80 h-screen flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
         <div id="text-container" className="flex flex-col justify-center items-center gap-y-1">
-          <h1 className="lg:text-3xl font-title text-2xl text-purple">SELF-CONSTRUCTED</h1>
+          <h1 className="lg:text-3xl xl:text-4xl font-title text-2xl text-purple">SELF-CONSTRUCTED</h1>
 
           <p className="lg:text-2xl font-title text-xl text-gray">A wallet, made by you.</p>
 
-          <p className="text-3xl text-darkPurple">
+          <p className="text-3xl">
             Brick by brick. <br /> Bit by bit.
           </p>
         </div>
@@ -73,18 +54,18 @@ function Block2() {
         <div className="lg:w-[485px] lg:h-[482px] lg:scale-90 lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-y-8" id="icon-container">
           <img className="lg:hidden scale-110 translate-y-8" src={icon} alt="icon-logo" />
           <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8">
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[500ms]" ref={TLref} src={TL} alt="tl" />
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[600ms]" ref={TCref} src={TC} alt="tc" />
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[700ms]" ref={TRref} src={TR} alt="tr" />
+            <img className="hover:cursor-grabbing hover:-translate-x-9 hover:-translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[500ms]" id="brick" ref={TLref} src={TL} alt="tl" />
+            <img className="hover:cursor-grabbing hover:-translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[600ms]" id="brick" ref={TCref} src={TC} alt="tc" />
+            <img className="hover:cursor-grabbing hover:translate-x-9 hover:-translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[700ms]" id="brick" ref={TRref} src={TR} alt="tr" />
           </div>
-          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-5">
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[300ms]" ref={MLref} src={ML} alt="ml" />
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[400ms]" ref={MRref} src={MR} alt="mr" />
+          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-5" id="middleRow">
+            <img className="hover:cursor-grabbing hover:-translate-x-20 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[300ms]" id="brick" ref={MLref} src={ML} alt="ml" />
+            <img className="hover:cursor-grabbing hover:translate-x-20 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[400ms]" id="brick" ref={MRref} src={MR} alt="mr" />
           </div>
-          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8" id="bottomRow">
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in" ref={BLref} src={BL} alt="bl" />
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[100ms]" ref={BCref} src={BC} alt="bc" />
-            <img className="opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[200ms]" ref={BRref} src={BR} alt="br" />
+          <div className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-8">
+            <img className="hover:cursor-grabbing hover:-translate-x-9 hover:translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in" id="brick" ref={BLref} src={BL} alt="bl" />
+            <img className="hover:cursor-grabbing hover:translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[100ms]" id="brick" ref={BCref} src={BC} alt="bc" />
+            <img className="hover:cursor-grabbing hover:translate-x-9 hover:translate-y-9 opacity-0 translate-y-[-600px] transition-all duration-150 ease-in delay-[200ms]" id="brick" ref={BRref} src={BR} alt="br" />
           </div>
         </div>
       </div>

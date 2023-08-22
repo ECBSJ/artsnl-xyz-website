@@ -5,9 +5,9 @@ function Block1() {
   return (
     <>
       <div className="lg:container lg:flex-row lg:justify-center container w-80 h-screen relative flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
-        <header className="absolute top-0 w-full h-16 flex lg:justify-start lg:gap-x-5 justify-between items-center pt-9">
-          <img className="w-10" src={icon} alt="artsnl-icon" />
-          <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg text-white" href="https://artsnl.app" target="_blank">
+        <header className="absolute top-0 w-full h-16 flex lg:justify-start lg:gap-x-5 justify-between items-center pt-9 pl-2">
+          <img className="w-10 hover:animate-spin" src={icon} alt="artsnl-icon" />
+          <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg transition-all hover:scale-105 active:scale-95 text-white" href="https://artsnl.app" target="_blank">
             Open App
           </a>
         </header>
@@ -18,10 +18,10 @@ function Block1() {
           </p>
           <p className="lg:text-xl lg:text-left lg:w-9/12 font-title text-justify w-64 text-xl text-gray">Build your own key pair and transaction in the most artisanal manner.</p>
           <div id="buttons-container" className="lg:flex lg:justify-center lg:items-center lg:gap-x-5 hidden">
-            <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg text-white" href="https://artsnl.app" target="_blank">
+            <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg transition-all hover:scale-105 active:scale-95 text-white" href="https://artsnl.app" target="_blank">
               Get Started
             </a>
-            <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg text-white" href="https://artsnl.app" target="_blank">
+            <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg transition-all hover:scale-105 active:scale-95 text-white" href="https://discord.gg/t2z36UvaTc" target="_blank">
               Chat With Us
             </a>
           </div>
