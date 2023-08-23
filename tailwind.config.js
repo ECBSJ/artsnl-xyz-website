@@ -6,13 +6,13 @@ export default {
       white: "#ffffff",
       gray: "#929292",
       purple: "#B01AF7",
-      darkPurple: "#0e0811"
+      darkPurple: "#0e0811",
     },
     fontFamily: {
       title: ["Russo One", "sans-serif"],
-      text: ["Michroma", "sans-serif"]
+      text: ["Michroma", "sans-serif"],
     },
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 }

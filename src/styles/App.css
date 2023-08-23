@@ -22,3 +22,31 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.RightToLeft {
+  animation: RightToLeft 3s infinite linear;
+}
+
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.LeftToRight {
+  animation: LeftToRight 3s infinite linear;
+}
+
+@keyframes LeftToRight {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
