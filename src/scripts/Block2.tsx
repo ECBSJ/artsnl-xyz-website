@@ -20,9 +20,9 @@ function Block2() {
   let TRref = useRef<HTMLImageElement>(null!)
 
   const observer = new IntersectionObserver(
-    entries => {
+    (entries) => {
       if (entries[0].isIntersecting) {
-        document.querySelectorAll("#brick").forEach(brick => {
+        document.querySelectorAll("#brick").forEach((brick) => {
           brick.classList.add("opacity-100")
           brick.classList.add("translate-y-0")
           brick.classList.remove("translate-y-[-600px]")
@@ -40,7 +40,7 @@ function Block2() {
 
   return (
     <>
-      <div className="lg:container lg:justify-center lg:gap-y-0 container w-80 h-screen flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
+      <div className="snap-start snap-always lg:container lg:justify-center lg:gap-y-0 container w-80 h-screen flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
         <div id="text-container" className="flex flex-col justify-center items-center gap-y-1">
           <h1 className="lg:text-3xl xl:text-4xl font-title text-2xl text-purple">SELF-CONSTRUCTED</h1>
 

@@ -4,7 +4,7 @@ import icon from "../assets/icon.png"
 function Block1() {
   return (
     <>
-      <div className="lg:container lg:flex-row lg:justify-center container w-80 h-screen relative flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
+      <div className="snap-start snap-always lg:container lg:flex-row lg:justify-center container w-80 h-screen relative flex flex-col justify-center items-center gap-y-5 bg-white dark:bg-darkPurple overflow-hidden">
         <header className="absolute top-0 w-full h-16 flex lg:justify-start lg:gap-x-5 justify-between items-center pt-9 pl-2">
           <img className="w-10 hover:animate-spin" src={icon} alt="artsnl-icon" />
           <a className="w-40 h-12 flex justify-center items-center bg-purple rounded-lg transition-all hover:scale-105 active:scale-95 text-white" href="https://artsnl.app" target="_blank">
