@@ -1,27 +1,20 @@
-# React + TypeScript + Vite
+# THE MAIN WEBSITE FOR ARTSNL
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This codebase acts as the main website for ARTSNL, the brand.
 
-Currently, two official plugins are available:
+Currently, ARTSNL is split up between two separate URLs:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Main website](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Vite](https://vitejs.dev/) for front-end tooling.
+- [App](https://artsnl.app/) which can be audited at its codebase [here](https://github.com/ECBSJ/ARTSNL)
 
-## Expanding the ESLint configuration
+## FOUND A BUG?
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Reach out to the dev team at our [Discord](https://discord.gg/t2z36UvaTc)
 
-- Configure the top-level `parserOptions` property like this:
+## STAY UPDATED
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Main Website](https://artsnl.xyz)
+- [Twitter](https://twitter.com/ARTSNL)
+- [Blog](https://mirror.xyz/artsnl.eth)
+- [Knowledge](https://artsnl.gitbook.io/artsnl-knowledge-space/)
+- [Chat](https://discord.gg/t2z36UvaTc)

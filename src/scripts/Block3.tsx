@@ -21,7 +21,7 @@ function Block3() {
         </div>
 
         <img src={buildBit} className="lg:block lg:scale-75 lg:translate-y-0 2xl:translate-x-32 hidden" alt="generate-key-pair" />
-        <div className="lg:hidden max-w-xs text-purple overflow-hidden">
+        <div className="lg:hidden max-w-xs overflow-hidden text-purple">
           <span className="flex RightToLeft">
             <p>10101010101010110101010101010101</p>
             <p>10101010101010110101010101010101</p>
